@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SocialIndia</title>
+<style>
+body{background:#f0f2f5;margin:0;font-family:sans-serif}
+header{background:#0a66c2;color:#fff;padding:15px;text-align:center;font-size:22px;font-weight:bold}
+.box{max-width:500px;margin:auto;padding:10px}
+.card{background:#fff;padding:15px;border-radius:10px;margin:10px 0}
+button{background:#0a66c2;color:#fff;border:none;padding:10px;width:100%;border-radius:20px;font-weight:bold}
+textarea{width:100%;border-radius:8px;padding:10px;border:1px solid #ddd}
+</style>
+</head>
+<body>
+<header>🇮🇳 SocialIndia</header>
+<div class="box">
+<div class="card">
+<textarea id="t" placeholder="Aap kya soch rahe ho?"></textarea>
+<button onclick="post()">Post Karo</button>
+</div>
+<div id="feed">
+<div class="card"><b>Kamal Kumar</b><p>Mor Aaghu Aaghu Ha Kariya He - Naya CG Song 🔥</p></div>
+<div class="card"><b>Welcome</b><p>Apna Desi Social Media App me swagat hai!</p></div>
+</div>
+</div>
+<script>
+function post(){
+let x=document.getElementById('t').value;
+if(!x)return;
+let d=document.createElement('div');
+d.className='card';
+d.innerHTML='<b>Aap</b><p>'+x+'</p>';
+document.getElementById('feed').prepend(d);
+document.getElementById('t').value='';
+}
+</script>
+</body>
+</html>
